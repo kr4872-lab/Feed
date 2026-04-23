@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feed</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: sans-serif;
+      background: #f5f5f5;
+      color: #333;
+      padding: 24px 16px;
+    }
+
+    .container {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    #search {
+      width: 100%;
+      padding: 10px 14px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-bottom: 24px;
+      outline: none;
+    }
+
+    #search:focus {
+      border-color: #555;
+    }
+
+    .post-card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 16px 20px;
+      margin-bottom: 12px;
+    }
+
+    .post-card h2 {
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    .post-card p {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    #loading {
+      text-align: center;
+      padding: 16px;
+      color: #888;
+    }
+
+    #load-more {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      margin-top: 8px;
+      font-size: 15px;
+      background: #333;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    #load-more:hover {
+      background: #555;
+    }
+
+    #load-more:disabled {
+      background: #aaa;
+      cursor: not-allowed;
+    }
+
+    #empty, #error {
+      text-align: center;
+      padding: 24px;
+      color: #888;
+    }
+
+    #error {
+      color: #c0392b;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <input 
+      type="text" 
+      id="search" 
+      placeholder="Поиск постов..."
+    >
+
+    <div id="posts-list"></div>
+    <div id="loading" class="hidden">Загрузка...</div>
+    <button id="load-more">Загрузить ещё</button>
+
+    <div id="empty" class="hidden">Ничего не найдено</div>
+    <div id="error" class="hidden">Что-то пошло не так</div>
+
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
