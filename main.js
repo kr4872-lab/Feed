@@ -21,7 +21,7 @@ async function fetchPosts(page, limit, search) {
     try {
         let url = `https://jsonplaceholder.typicode.com/posts?_page=${page}&_limit=${limit}`;
         if (search.length > 0) {
-            url += `&title=${search}`;
+            url += `&title_like=${search}`;
         }
         const response = await fetch(url);
         if (!response.ok) {
